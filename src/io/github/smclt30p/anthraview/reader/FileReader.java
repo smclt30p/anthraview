@@ -1,4 +1,4 @@
-package io.github.smclt30p.anthraview;
+package io.github.smclt30p.anthraview.reader;
 
 import java.io.File;
 import java.io.IOException;
