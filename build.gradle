@@ -35,6 +35,7 @@ jar {
                    'Implementation-Vendor' : 'Ognjen Galic (smclt30p)',
                    'Specification-Vendor': 'Ognjen Galic (smclt30p)',
                    'Specification-Version' : version,
-                   'Specification-Title': 'Anhtrazit Log Viewer'
+                   'Specification-Title': 'Anhtrazit Log Viewer',
+	 	   'Main-Class': mainClassName
     }       
 } 
