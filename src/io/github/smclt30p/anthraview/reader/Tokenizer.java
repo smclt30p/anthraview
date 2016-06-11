@@ -39,13 +39,13 @@ public class Tokenizer {
 
     public void tokenize() {
 
-        for (int i = 0; i < 1; i++ ) {
+        long time;
+        String severity;
+        String message;
+        String logTag;
+        String token = "";
 
-            long time;
-            String severity;
-            String message;
-            String logTag;
-            String token = "";
+        for (int i = 0; i < 1; i++ ) {
 
             /* Parsing epoch */
 
