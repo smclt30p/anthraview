@@ -36,4 +36,8 @@ public class Lexer implements LexerUtil {
     public String getChar() {
         return fileChars[index];
     }
+    
+    public void reset() {
+        this.index = -1;
+    }
 }
