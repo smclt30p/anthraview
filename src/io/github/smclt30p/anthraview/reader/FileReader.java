@@ -6,12 +6,14 @@ import java.io.FileNotFoundException;
 import java.io.FileInputStream;
 import java.io.ByteArrayOutputStream;
 
+import java.nio.charset.StandardCharsets;
+
 public class FileReader {
 
     private File file;
     private FileInputStream in;
     
-    public String getLog(File file) {
+    public String[] getLog(File file) {
 
         this.file = file;
 
@@ -30,7 +32,15 @@ public class FileReader {
             this.in.close();
             out.close();
 
-            return new String(out.toByteArray());
+            String raw = new String(out.toByteArray(), StandardCharsets.UTF_8);
+            char[] charArray = raw.toCharArray();
+            String[] stringCharArray = new String[charArray.length];
+
+            for (int i = 0; i < charArray.length; i++) {
+                stringCharArray[i] = String.valueOf(charArray[i]);
+            }
+
+            return stringCharArray;
            
         } catch (FileNotFoundException e) {
             System.err.println("Error: " + e.getMessage());
