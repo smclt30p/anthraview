@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: io.github.smclt30p.anthraview
-Implementation-Version: 88
-Implementation-Vendor: Ognjen Galic (smclt30p)
-Specification-Vendor: Ognjen Galic (smclt30p)
-Specification-Version: 1.0
-Specification-Title: Anhtrazit Log Viewer
-

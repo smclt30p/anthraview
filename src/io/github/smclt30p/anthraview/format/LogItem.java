@@ -5,21 +5,26 @@ public class LogItem {
     private long timeStamp;
     private String logMessage;
     private String logTag;
+    private String logSeverity;
 
-    public LogItem(long timeStamp, String logTag, String logMessage) {
+    public LogItem(long timeStamp,String logSeverity, String logTag, String logMessage) {
         this.timeStamp = timeStamp;
         this.logTag = logTag;
         this.logMessage = logMessage;
+        this.logSeverity = logSeverity;
     }
 
     public String getLogTag() {
-        return null;
+        return this.logTag;
     }
     public String getLogMessage() {
-        return null;
+        return this.logMessage;
     }
     public long getTimeStamp() {
-        return 0;
+        return this.timeStamp;
+    }
+    public String getLogSeverity() {
+        return this.logSeverity;
     }
 
 }

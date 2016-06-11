@@ -45,7 +45,7 @@ public class Tokenizer {
         String logTag;
         String token = "";
 
-        for (int i = 0; i < 1; i++ ) {
+        for (int i = 0; i < numberOfItems; i++ ) {
 
             /* Parsing epoch */
 
@@ -114,10 +114,33 @@ public class Tokenizer {
             logTag = token;
             token = "";
 
-            System.out.println("time: " + time);
-            System.out.println("severity: " + severity);
-            System.out.println("logtag: " + logTag);
+            /* Parse log message */
+
+            if (this.lexer.goForward()) {
+                if (this.lexer.getChar().equals(" ")) {
+                    while (this.lexer.goForward()) {
+                        if (this.lexer.getChar().equals("$")) {
+                            break;
+                        } else {
+                            token += this.lexer.getChar();
+                        }
+                    }
+                } else {
+                    System.err.println("Unexpected token, expected whitespace, found: " + this.lexer.getChar());
+                }
+            }
+
+            /* Finnish parsing message, reset token and finnih tokenizing */
+
+            message = token;
+            token = "";
+            
+            this.items[i] = new LogItem(time, severity, logTag, message);
 
         }
+    }
+
+    public LogItem[] getItems() {
+        return this.items;
     }
 }
