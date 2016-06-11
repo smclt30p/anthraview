@@ -40,17 +40,16 @@ public class Tokenizer {
     public void tokenize() {
 
         for (int i = 0; i < 1; i++ ) {
-            System.out.println("doing it...");
 
-            
             long time;
+            String severity;
             String message;
-            String tag;
+            String logTag;
             String token = "";
 
+            /* Parsing epoch */
 
-            while (this.lexer.goForward()) {
-                System.out.println("Reading");
+            if (this.lexer.goForward()) {
                 if (this.lexer.getChar().equals("[")) {
                     while (this.lexer.goForward()) {
                         if (this.lexer.getChar().equals("]")) {
@@ -59,17 +58,66 @@ public class Tokenizer {
                            token += this.lexer.getChar(); 
                         }
                     }
-                    break;
                 } else {
-                    System.err.println("Illegal start of log!");
+                    System.err.println("Illegal start of log! Expected '[', found: " + this.lexer.getChar());
+                }
+            } else {
+                System.out.println("Unexcpeted end of file!");
+            }
+
+            /* Finnish parsing epoch, reset token */
+
+            time = Long.parseLong(token);
+            token = "";
+
+            /* Parse severity tag */
+
+            if (this.lexer.goForward()) {
+                if (this.lexer.getChar().equals(" ") && this.lexer.goForward()) {
+                   if (this.lexer.getChar().equals("{")) {
+                       while (this.lexer.goForward()) {
+                           if (this.lexer.getChar().equals("}")) {
+                               break;
+                            } else {
+                                token += this.lexer.getChar();
+                            }
+                        }
+                    }
+                } else {
+                    System.err.println("Unexpected token, expected whitespace, found: " + this.lexer.getChar());
                 }
             }
 
-            System.out.println(token);
+            /* Finnish parsing severity tag, reset token */
 
+            severity = token;
+            token = "";
+
+            /* Parse log tag */
+
+            if (this.lexer.goForward()) {
+                if (this.lexer.getChar().equals(" ")) {
+                    while (this.lexer.goForward()) {
+                        if (this.lexer.getChar().equals("%")) {
+                            break;
+                        } else {
+                            token += this.lexer.getChar();
+                        }
+                    }
+                } else {
+                    System.err.println("Unexpected token, expected whitespace, found: " + this.lexer.getChar());
+                }
+            }
+
+            /* Finnish parsing log tag, reset token */
+
+            logTag = token;
+            token = "";
+
+            System.out.println("time: " + time);
+            System.out.println("severity: " + severity);
+            System.out.println("logtag: " + logTag);
 
         }
-
     }
-
 }
