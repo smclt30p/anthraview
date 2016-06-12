@@ -1,4 +1,4 @@
-package io.github.smclt30p.anthraview.reader;
+package io.github.smclt30p.anthraview.format;
 
 import io.github.smclt30p.anthraview.interfaces.LexerUtil;
 

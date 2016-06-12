@@ -1,9 +1,9 @@
-package io.github.smclt30p.anthraview.reader;
+package io.github.smclt30p.anthraview.format;
 
 import java.util.ArrayList;
 import java.io.File;
 
-import io.github.smclt30p.anthraview.format.LogItem;
+import io.github.smclt30p.anthraview.reader.FileReader;
 
 public class Tokenizer {
 
