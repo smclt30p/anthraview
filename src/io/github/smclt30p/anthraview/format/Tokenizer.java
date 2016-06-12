@@ -43,7 +43,7 @@ public class Tokenizer {
         String severity;
         String message;
         String logTag;
-        String token = "";
+        StringBuilder token = new StringBuilder();
 
         for (int i = 0; i < numberOfItems; i++ ) {
 
@@ -55,7 +55,7 @@ public class Tokenizer {
                         if (this.lexer.getChar().equals("]")) {
                             break;
                         } else {
-                           token += this.lexer.getChar(); 
+                           token.append(this.lexer.getChar()); 
                         }
                     }
                 } else {
@@ -67,8 +67,8 @@ public class Tokenizer {
 
             /* Finnish parsing epoch, reset token */
 
-            time = Long.parseLong(token);
-            token = "";
+            time = Long.parseLong(token.toString());
+            token = new StringBuilder();
 
             /* Parse severity tag */
 
@@ -79,7 +79,7 @@ public class Tokenizer {
                            if (this.lexer.getChar().equals("}")) {
                                break;
                             } else {
-                                token += this.lexer.getChar();
+                                token.append(this.lexer.getChar());
                             }
                         }
                     }
@@ -90,8 +90,8 @@ public class Tokenizer {
 
             /* Finnish parsing severity tag, reset token */
 
-            severity = token;
-            token = "";
+            severity = token.toString();
+            token = new StringBuilder();
 
             /* Parse log tag */
 
@@ -101,7 +101,7 @@ public class Tokenizer {
                         if (this.lexer.getChar().equals("%")) {
                             break;
                         } else {
-                            token += this.lexer.getChar();
+                            token.append(this.lexer.getChar());
                         }
                     }
                 } else {
@@ -111,8 +111,8 @@ public class Tokenizer {
 
             /* Finnish parsing log tag, reset token */
 
-            logTag = token;
-            token = "";
+            logTag = token.toString();
+            token = new StringBuilder();
 
             /* Parse log message */
 
@@ -122,7 +122,7 @@ public class Tokenizer {
                         if (this.lexer.getChar().equals("$")) {
                             break;
                         } else {
-                            token += this.lexer.getChar();
+                            token.append(this.lexer.getChar());
                         }
                     }
                 } else {
@@ -132,8 +132,8 @@ public class Tokenizer {
 
             /* Finnish parsing message, reset token and finnih tokenizing */
 
-            message = token;
-            token = "";
+            message = token.toString();
+            token = new StringBuilder();
             
             this.items[i] = new LogItem(time, severity, logTag, message);
 
