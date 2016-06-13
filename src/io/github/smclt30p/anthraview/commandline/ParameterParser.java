@@ -28,6 +28,9 @@ public abstract class ParameterParser {
                         token.append(lexer.getChar());
                     }
                 }
+            } else if (j == 0) {
+                parameters[0] = new Parameter(params[0], null);
+                continue;
             } else {
                 System.err.print("Invalid argument start! " + lexer.getChar() + ", arguments are in the format " +
                         "--argument=parameter");
@@ -50,6 +53,15 @@ public abstract class ParameterParser {
 
         }
         return parameters;
+    }
+
+    public static boolean checkForParameter(Parameter[] params, String key) {
+        for (Parameter p : params) {
+            if (p.getArgument().equals(key)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
