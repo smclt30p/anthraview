@@ -6,7 +6,7 @@ public abstract class Help {
             "View Anthrazit Logs, format then and convert to human readable formats.\n\n" +
             "\t--color - view logs in color (Supported on bash or zsh systems only)\n" +
             "\t--timestamp - view logs with human readable timestamps\n" +
-            "\t--dmesg - view log entries age in miliseconds from start\n";
+            "\t--dmesg - view log entries age in miliseconds from start\n\n";
 
     private static final String VERSION = "anthraview (Anthrazit) 1.0 build 205\n" +
             "Copyright (C) 2016 Free Time Foundation, Inc.\n" +
