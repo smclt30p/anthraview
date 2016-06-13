@@ -2,10 +2,10 @@ package io.github.smclt30p.anthraview.format;
 
 public class LogItem {
 
-    private long timeStamp;
-    private String logMessage;
-    private String logTag;
-    private String logSeverity;
+    private final long timeStamp;
+    private final String logMessage;
+    private final String logTag;
+    private final String logSeverity;
 
     public LogItem(long timeStamp,String logSeverity, String logTag, String logMessage) {
         this.timeStamp = timeStamp;

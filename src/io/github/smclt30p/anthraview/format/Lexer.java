@@ -2,12 +2,12 @@ package io.github.smclt30p.anthraview.format;
 
 import io.github.smclt30p.anthraview.interfaces.LexerUtil;
 
-public class Lexer implements LexerUtil {
+class Lexer implements LexerUtil {
 
     private int index;
-    private String[] fileChars;
+    private final String[] fileChars;
 
-    public Lexer(String[] fileChars) {
+    Lexer(String[] fileChars) {
         this.fileChars = fileChars;
         this.index = -1;
     }
@@ -37,7 +37,7 @@ public class Lexer implements LexerUtil {
         return fileChars[index];
     }
     
-    public void reset() {
+    void reset() {
         this.index = -1;
     }
 }

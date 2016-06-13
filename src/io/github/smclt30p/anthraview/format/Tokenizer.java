@@ -1,6 +1,5 @@
 package io.github.smclt30p.anthraview.format;
 
-import java.util.ArrayList;
 import java.io.File;
 
 import io.github.smclt30p.anthraview.reader.FileReader;
@@ -9,21 +8,21 @@ public class Tokenizer {
 
     private static final String ITEM_BREAK = "$";
 
-    private int numberOfItems;
-    private Lexer lexer;
-    private LogItem[] items;
+    private final int numberOfItems;
+    private final Lexer lexer;
+    private final LogItem[] items;
 
     public Tokenizer(File file) {
 
         this.lexer = new Lexer(new FileReader().getLog(file));
-        this.numberOfItems = countItems(ITEM_BREAK);
+        this.numberOfItems = countItems();
         this.items = new LogItem[this.numberOfItems];
 
         tokenize();
 
     }
 
-    private int countItems(String itemBreak) {
+    private int countItems() {
 
         int num = 0;
 
@@ -37,7 +36,7 @@ public class Tokenizer {
 
     }
 
-    public void tokenize() {
+    private void tokenize() {
 
         long time;
         String severity;
