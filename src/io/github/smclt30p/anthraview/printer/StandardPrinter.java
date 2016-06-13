@@ -6,9 +6,15 @@ import java.io.File;
 
 public class StandardPrinter extends Printer {
 
+    private File log;
+
+    public StandardPrinter(File log) {
+        this.log = log;
+    }
+
     @Override
     public void print() {
-        LogItem[] items = getItems(new File("/home/gala/log"));
+        LogItem[] items = getItems(log);
         StringBuilder builder = new StringBuilder();
         for (LogItem i : items) {
             builder.append("[")
