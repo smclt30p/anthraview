@@ -33,7 +33,7 @@ public class StandardPrinter extends Printer {
 
     @Override
     public void printColor() {
-       LogItem[] items = getItems(new File("/home/gala/log"));
+        LogItem[] items = getItems(new File("/home/gala/log"));
         StringBuilder builder = new StringBuilder();
         String color;
         for (LogItem i : items) {
