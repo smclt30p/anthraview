@@ -5,7 +5,7 @@ import io.github.smclt30p.anthraview.format.Tokenizer;
 
 import java.io.File;
 
-public abstract class Printer {
+abstract class Printer {
 
     static final String ANSI_RESET = "\u001B[0m";
     static final String ANSI_RED_BRIGHT = "\u001B[1;31m";
@@ -15,11 +15,12 @@ public abstract class Printer {
     static final String ANSI_GREY = "\u001B[37m";
     static final String ANSI_WHITE = "\u001B[1;37m";
 
-    public LogItem[] getItems(File file) {
+    LogItem[] getItems(File file) {
         Tokenizer tokenizer = new Tokenizer(file);
         return tokenizer.getItems();
     }
 
     public abstract void print();
+    public abstract void printColor();
 
 }
