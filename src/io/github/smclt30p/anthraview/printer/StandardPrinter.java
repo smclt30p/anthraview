@@ -19,9 +19,9 @@ public class StandardPrinter extends Printer {
         for (LogItem i : items) {
             builder.append("[")
                     .append(i.getTimeStamp())
-                    .append("] ")
+                    .append("] (")
                     .append(i.getLogSeverity())
-                    .append(": ")
+                    .append(") ")
                     .append(i.getLogTag())
                     .append(": ")
                     .append(i.getLogMessage());
