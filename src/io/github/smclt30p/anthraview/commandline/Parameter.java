@@ -13,9 +13,7 @@ public class Parameter implements Parameterized {
     }
 
     @Override
-    public String getArgument() {
-        return this.argument;
-    }
+    public String getArgument() { return this.argument; }
 
     @Override
     public String getParameter() {
