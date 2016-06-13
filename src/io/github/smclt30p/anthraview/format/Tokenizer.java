@@ -59,9 +59,10 @@ public class Tokenizer {
                     }
                 } else {
                     System.err.println("Illegal start of log! Expected '[', found: " + this.lexer.getChar());
+                    System.exit(1);
                 }
             } else {
-                System.out.println("Unexcpeted end of file!");
+                System.out.println("Unexpected end of file!");
             }
 
             /* Finnish parsing epoch, reset token */
