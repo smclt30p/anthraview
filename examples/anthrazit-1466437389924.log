@@ -1,0 +1,14 @@
+[1466437389925] {INFO} anthrazit% Successfully started at 1466437389924
+$[1466437389927] {DEBUG} anthrazit% fileName: anthrazit-1466437389924.log, logPath: /home/gala, exitOnFatal: true, debug: true
+$[1466437389930] {EXCEPTION} main% java.io.FileNotFoundException: / (Is a directory)
+		 at java.io.FileOutputStream.open0(Native Method)
+		 at java.io.FileOutputStream.open(FileOutputStream.java:270)
+		 at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+		 at java.io.FileOutputStream.<init>(FileOutputStream.java:101)
+		 at io.github.smclt30p.anthrazit.Main.main(Main.java:30)
+
+$[1466437389930] {ERROR} main% This is an error
+$[1466437389930] {DEBUG} main% This is debug
+$[1466437389930] {INFO} main% This is info
+$[1466437389931] {FATAL} main% This is fatal
+$
