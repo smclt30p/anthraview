@@ -1,5 +1,30 @@
 package io.github.smclt30p.anthraview.commandline;
 
+/*
+ * Copyright (C) 2016  Ognjen Galić (smclt30p@gmail.com)
+ *
+ * This file is part of Anthraview.
+ *
+ * Anthraview is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, up to version 2 of the License.
+ *
+ * Anthraview is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Anthraview. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/**
+ * An abstract class to present POSIX-style
+ * version and help info to the user.
+ *
+ * @author Ognjen Galic
+ * @since 1.0
+ */
 public abstract class Help {
 
     private static final String HELP = "Usage: anthraview file --[ARGUMENT]=[PARAMETER] -- ...\n\n" +
@@ -17,11 +42,21 @@ public abstract class Help {
             "\n" +
             "Written by Ognjen Galić.\n";
 
+    /**
+     * Print the help and exit the program.
+     *
+     * @since 1.0
+     */
     public static void printHelp() {
         System.out.print(HELP);
         System.exit(0);
     }
 
+    /**
+     * Print the version and exit the program.
+     *
+     * @since 1.0
+     */
     public static void printVersion() {
         System.out.print(VERSION);
         System.exit(0);

@@ -2,8 +2,32 @@ package io.github.smclt30p.anthraview.format;
 
 import java.io.File;
 
+/*
+ * Copyright (C) 2016  Ognjen Galić (smclt30p@gmail.com)
+ *
+ * This file is part of Anthraview.
+ *
+ * Anthraview is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, up to version 2 of the License.
+ *
+ * Anthraview is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Anthraview. If not, see <http://www.gnu.org/licenses/>.
+*/
+
 import io.github.smclt30p.anthraview.reader.FileReader;
 
+/**
+ * A class used to tokenize and analyze the log file on disk.
+ *
+ * @author Ognjen Galic
+ * @since 1.0
+ */
 public class Tokenizer {
 
     private static final String ITEM_BREAK = "$";
@@ -12,13 +36,17 @@ public class Tokenizer {
     private final Lexer lexer;
     private final LogItem[] items;
 
+    /**
+     * Construct a new Tokenizer object from a file on disk.
+     *
+     * @param file the file on disk.
+     * @since 1.0
+     */
     public Tokenizer(File file) {
 
         this.lexer = new Lexer(new FileReader().getLog(file));
         this.numberOfItems = countItems();
         this.items = new LogItem[this.numberOfItems];
-
-        tokenize();
 
     }
 
@@ -36,7 +64,12 @@ public class Tokenizer {
 
     }
 
-    private void tokenize() {
+    /**
+     * Convert a log file to LogItem objects. Call this before calling getItems().
+     *
+     * @since 1.0
+     */
+    public void tokenize() {
 
         long time;
         String severity;
@@ -88,7 +121,7 @@ public class Tokenizer {
                 }
             }
 
-            /* Finnish parsing severity tag, reset token */
+            /* Finnish parsing severity tag, reset toktrailigen */
 
             severity = token.toString();
             token = new StringBuilder();
@@ -140,6 +173,11 @@ public class Tokenizer {
         }
     }
 
+    /**
+     * Return the log item objects from the log file.
+     *
+     * @return the log item objects.
+     */
     public LogItem[] getItems() {
         return this.items;
     }
