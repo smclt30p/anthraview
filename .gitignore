@@ -2,3 +2,5 @@
 build
 .gradle
 .idea
+anthraview.iml
+out
