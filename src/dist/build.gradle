@@ -1,0 +1,41 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'io.github.smclt30p.anthraview.Main'
+
+version = 1.0
+
+def versionPropsFile = file('build.number')
+def code;
+
+if (versionPropsFile.canRead()) {
+	def Properties versionProps = new Properties()
+	versionProps.load(new FileInputStream(versionPropsFile))
+	code = versionProps['VERSION_CODE'].toInteger() + 1
+
+	versionProps['VERSION_CODE']=code.toString()
+	versionProps.store(versionPropsFile.newWriter(), null)
+
+} else {
+	throw new GradleException("Could not read build.number!")
+}
+
+sourceSets {
+   main {
+      java {
+         srcDir 'src/'
+      }
+   }
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'io.github.smclt30p.anthraview',
+                   'Implementation-Version': code,
+                   'Implementation-Vendor' : 'Ognjen Galic (smclt30p)',
+                   'Specification-Vendor': 'Ognjen Galic (smclt30p)',
+                   'Specification-Version' : version,
+                   'Specification-Title': 'Anhtrazit Log Viewer',
+	 	   'Main-Class': mainClassName
+    }       
+} 
