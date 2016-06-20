@@ -1,4 +1,4 @@
-![alt tag](http://i.imgur.com/GMcpCQE.png)
+![alt tag](http://i.imgur.com/zVhstfP.png)
 
 # Anthraview 1.0 build 221
 ### Anthrazit Logger Viewer
