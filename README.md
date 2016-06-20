@@ -1,4 +1,4 @@
-![alt tag](http://i.imgur.com/L5HiQF4.png)
+![alt tag](http://i.imgur.com/gqwiDu7.png)
 
 Anthrazit Logger Viewer 
 
