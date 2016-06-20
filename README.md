@@ -3,17 +3,13 @@
 # Anthraview 1.0 build 221
 ### Anthrazit Logger Viewer
 
----
-
 This is a log viewer with timestamp formatting and
 coloring support. It can be used with any language, 
 given that the language follows the Anthrazit Logging 
 Stadard.
 
----
-
 ### Anthrazit Logging Standard
----
+
 If you want to write a logger compatible with 
 Anhtraview, please follow these standards:
 
