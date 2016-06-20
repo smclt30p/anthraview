@@ -1,0 +1,9 @@
+Run:
+
+./configure
+make
+make install (as root)
+
+File created:
+	/bin/anthraview
+	/lib/anthraview/anthraview-X.X.jar
