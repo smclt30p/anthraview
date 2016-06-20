@@ -34,7 +34,7 @@ public abstract class Help {
             "\t--dmesg - view log entries age in miliseconds from start\n" +
             "\t--when - view when log was created in human readable format\n\n";
 
-    private static final String VERSION = "anthraview (Anthrazit) 1.0 build 219\n" +
+    private static final String VERSION = "anthraview (Anthrazit) 1.0 build 222\n" +
             "Copyright (C) 2016 Free Time Foundation, Inc.\n" +
             "License GPLv2: GNU GPL version 2 <http://gnu.org/licenses/gpl.html>.\n" +
             "This is free software: you are free to change and redistribute it.\n" +
