@@ -1,0 +1,59 @@
+#!/bin/bash
+if hash java 2>/dev/null; then
+	echo "checking for java ... yes"
+else
+	echo "checking for java ... no\njava is not installed, intall the JDK!"
+	exit 1
+fi
+
+if hash javac 2>/dev/null; then
+	echo "checking for javac ... yes"
+else
+	echo "checking for javac ... no\njavac is not installed, intall the JDK!"
+	exit 1
+fi
+
+if hash gradle 2>/dev/null; then
+	echo "checking for gradle ... yes"
+else
+	echo "checking for gradle ... no\ngradle is not installed!"
+	exit 1
+fi
+
+if hash tar 2>/dev/null; then
+	echo "checking for tar ... yes"
+else
+	echo "checking for tar ... no\ntar is not installed!"
+	exit 1
+fi
+
+if hash rm 2>/dev/null; then
+	echo "checking for rm ... yes"
+else
+	echo "checking for rm ... no\nrm is not installed!"
+	exit 1
+fi
+
+if hash mv 2>/dev/null; then
+	echo "checking for mv ... yes"
+else
+	echo "checking for mv ... no\nmv is not installed!"
+	exit 1
+fi
+
+if hash cp 2>/dev/null; then
+	echo "checking for cp ... yes"
+else
+	echo "checking for cp ... no\ncp is not installed!"
+	exit 1
+fi
+
+if hash chmod 2>/dev/null; then
+	echo "checking for chmod ... yes"
+else
+	echo "checking for chmod ... no\nchmod is not installed!"
+	exit 1
+fi
+
+cp src/dist/Makefile .
+echo "[makefile] Makefile created."
